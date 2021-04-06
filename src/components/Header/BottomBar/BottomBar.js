@@ -1,32 +1,20 @@
 import React from 'react';
 import Search from '../Search/Search';
+import Logo from '../Logo /Logo';
+import UserWishList  from '../UserWishlist/UserWishList';
 const bottomBar=()=>{
     return (
-    
-        <div class="bottom-bar">
+    <div class="bottom-bar">
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-3">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="img/logo.png" alt="Logo"/>
-                        </a>
-                    </div>
+                    <Logo/>
                 </div>
                 <div class="col-md-6">
-               <Search/>
+                  <Search/>
                </div>
                 <div class="col-md-3">
-                    <div class="user">
-                        <a href="wishlist.html" class="btn wishlist">
-                            <i class="fa fa-heart"></i>
-                            <span>(0)</span>
-                        </a>
-                        <a href="cart.html" class="btn cart">
-                            <i class="fa fa-shopping-cart"></i>
-                            <span>(0)</span>
-                        </a>
-                    </div>
+                   <UserWishList/>
                 </div>
             </div>
         </div>

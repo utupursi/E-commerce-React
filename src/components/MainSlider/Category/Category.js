@@ -1,5 +1,4 @@
 import React,{useState} from 'react';
-import categoryItem from './CategoryItem/CategoryItem';
 import CategoryItem from './CategoryItem/CategoryItem';
 const Category=()=>{
     const [categoryItems, setCategoryItems] = useState([
@@ -40,10 +39,11 @@ const Category=()=>{
         },
     
     ]);
+
     return(
-        <ul class="navbar-nav">
-            {categoryItems.map(item=>(
-                 <CategoryItem iconClass={item.iconClass}>{item.title}</CategoryItem>
+        <ul className="navbar-nav">
+            {categoryItems.map((item,i)=>(
+                 <CategoryItem key={i} iconClass={item.iconClass}>{item.title}</CategoryItem>
             ))}
 
     </ul>

@@ -9,7 +9,7 @@ function App() {
         <Layout>
         <Switch>
             <Route path="/" exact component={Estore}/>
-          </Switch>
+         </Switch>
         </Layout>
     </div>
   );

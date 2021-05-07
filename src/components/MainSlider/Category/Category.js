@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import CategoryItem from './CategoryItem/CategoryItem';
-const Category=()=>{
+const Category=(props)=>{
     const [categoryItems, setCategoryItems] = useState([
         {
             iconClass:'fa fa-home',
@@ -37,13 +37,17 @@ const Category=()=>{
             iconClass:'fa fa-microchip',
             title:'Electronics Accessories'
         },
+        {
+            iconClass:'fa fa-microchip',
+            title:'Electronics Accessories'
+        },
     
     ]);
 
     return(
         <ul className="navbar-nav">
-            {categoryItems.map((item,i)=>(
-                 <CategoryItem key={i} iconClass={item.iconClass}>{item.title}</CategoryItem>
+            {props.categories.map((item,i)=>(
+                 <CategoryItem key={i} iconClass={categoryItems[i].iconClass} >{item.available_language[0]?item.available_language[0].title:""}</CategoryItem>
             ))}
 
     </ul>

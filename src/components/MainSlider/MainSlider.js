@@ -2,7 +2,7 @@ import React from 'react';
 import Category from '../MainSlider/Category/Category';
 import HeaderSlider from '../MainSlider/HeaderSlider/HeaderSlider';
 import HeaderImage from '../MainSlider/HeaderImage/HeaderImage';
-const MainSlider=()=>{
+const MainSlider=(props)=>{
 
     return (
         <div className="header">
@@ -10,7 +10,7 @@ const MainSlider=()=>{
             <div className="row">
                 <div className="col-md-3">
                     <nav className="navbar bg-light">
-                       <Category/>
+                       <Category categories={props.categories} />
                     </nav>
                 </div>
                 <div className="col-md-6">

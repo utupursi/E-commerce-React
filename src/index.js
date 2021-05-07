@@ -4,13 +4,28 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { createStore, combineReducers, applyMiddleware,compose} from 'redux';
+import productReducer from './store/reducers/product';
+import categoryReducer from './store/reducers/category';
+import thunk from 'redux-thunk';
+import { Provider } from 'react-redux';
 
+
+const rootReducer = combineReducers({
+  product: productReducer,
+  category:categoryReducer
+});
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <React.StrictMode>
+  <Provider store={store}>
   <BrowserRouter>
-    <App />
+  <App />
   </BrowserRouter>
+  </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

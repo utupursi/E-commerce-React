@@ -53,7 +53,7 @@ const CategoryImage=()=>{
             <div className="row">
                   {categoryItems.map((item,i)=>{
                      return(
-                     <div className="col-md-3">
+                     <div key={i} className="col-md-3">
                          {Array.isArray(item)?
                          <React.StrictMode>
                             <CategoryImageItem key={i} src={item[0].src} text={item[0].text} class={item[0].className}/> 
